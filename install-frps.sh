@@ -212,8 +212,12 @@ fun_download_file(){
             exit 1
         fi
         tar xzf ${program_latest_filename}
+        echo `pwd`
+        echo ${program_latest_filename}
         mv frp_${FRPS_VER}_linux_${ARCHS}/frps ${str_program_dir}/${program_name}
-        rm -fr ${program_latest_filename} frp_${FRPS_VER}_linux_${ARCHS}
+        mv frp_${FRPS_VER}_linux_${ARCHS}/frpc `pwd`
+      #  rm -fr ${program_latest_filename} frp_${FRPS_VER}_linux_${ARCHS}
+        rm -fr frp_${FRPS_VER}_linux_${ARCHS}
     fi
     chown root:root -R ${str_program_dir}
     if [ -s ${str_program_dir}/${program_name} ]; then
