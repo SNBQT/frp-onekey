@@ -18,7 +18,7 @@ str_program_dir="/usr/local/${program_name}"
 program_init="/etc/init.d/${program_name}"
 program_config_file="frps.ini"
 ver_file="/tmp/.frp_ver.sh"
-str_install_shell="https://raw.githubusercontent.com/MvsCode/frp-onekey/master/install-frps.sh"
+str_install_shell="https://raw.githubusercontent.com/SNBQT/frp-onekey/master/install-frps.sh"
 shell_update(){
     fun_clangcn "clear"
     echo "Check updates for shell..."
@@ -210,7 +210,7 @@ fun_download_file(){
         echo `pwd`
         echo ${program_latest_filename}
         echo frp_${FRPS_VER}_linux_${ARCHS}
-        if ! wget  -q ${program_latest_file_url} -O ${program_latest_filename}; then
+        if ! curl ${program_latest_file_url} -o ${program_latest_filename}; then
             echo -e " ${COLOR_RED}failed${COLOR_END}"
             exit 1
         fi
