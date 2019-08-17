@@ -840,7 +840,8 @@ update_program_server_clang(){
         local_program_version=`${str_program_dir}/${program_name} --version`
         echo -e "${COLOR_GREEN}${program_name}  local version ${local_program_version}${COLOR_END}"
         echo -e "${COLOR_GREEN}${program_name} remote version ${FRPS_VER}${COLOR_END}"
-        if [[ "${local_program_version}" != "${FRPS_VER}" ]];then
+       # if [[ "${local_program_version}" != "${FRPS_VER}" ]];then
+        if [[ 1 ]];then
             echo -e "${COLOR_GREEN}Found a new version,update now!!!${COLOR_END}"
             ${program_init} stop
             sleep 1
