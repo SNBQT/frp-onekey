@@ -210,7 +210,7 @@ fun_download_file(){
         echo `pwd`
         echo ${program_latest_filename}
         echo frp_${FRPS_VER}_linux_${ARCHS}
-        if ! curl ${program_latest_file_url} -o ${program_latest_filename}; then
+        if ! curl -LJ ${program_latest_file_url} -o ${program_latest_filename}; then
             echo -e " ${COLOR_RED}failed${COLOR_END}"
             exit 1
         fi
